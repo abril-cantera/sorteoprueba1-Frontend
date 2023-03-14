@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  height: 100%;
+  font-family: "Rubik Puddles", cursive;
+}
+/**/
+/* .divPrincipal {
+  display: flex;
+}
+.sorteo-uno {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.jugadores {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.sorteo-uno-container {
+  background-color: pink;
+  width: auto;
+  max-width: 80%;
+  height: auto;
+  box-shadow: 0px 0px 10px 4px rgba(181, 94, 94, 0.75);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sorteo-uno-container h2 {
+  font-size: 3rem;
+  text-align: center;
+  margin: 10px;
+}
+.sorteo-uno-container li {
+  width: 210px;
+  height: 50px;
+  font-weight: 700;
+  list-style: none;
+  font-size: 2rem;
+  margin: 5px;
+  border-radius: 5px;
+  display: flex;
+  background: rgb(222, 139, 153);
+  justify-content: center;
+  align-items: center;
+}
+#ganador-btn {
+  height: 60px;
+  width: 200px;
+  font-size: 1.3rem;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  font-family: "Rubik Puddles", cursive;
+  font-weight: 700;
+}
+#ganador-btn:hover {
+  box-shadow: 0px 0px 11px 4px rgba(186, 71, 71, 0.75);
+} */
+/**/
+.sorteo-dos {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sorteo-dos-container {
+  width: 60vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: pink;
+  box-shadow: 0px 0px 10px 4px rgb(181 94 94 / 75%);
+  border-radius: 5px;
+}
+.sorteo-dos-container h2 {
+  font-size: 3rem;
+  text-align: center;
+  padding-top: 15px;
+}
+.sorteo-dos-container li {
+  width: 210px;
+  height: 50px;
+  font-weight: 700;
+  list-style: none;
+  font-size: 2rem;
+  margin: 5px;
+  border-radius: 5px;
+  display: flex;
+  background: rgb(222, 139, 153);
+  justify-content: center;
+  align-items: center;
+}
+.sorteo-dos-container input {
+  height: 60px;
+  width: 200px;
+  font-size: 2rem;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  font-family: "Rubik Puddles", cursive;
+  font-weight: 700;
+  text-align: center;
+}
+.sorteo-dos-container input:hover {
+  box-shadow: 0px 0px 11px 4px rgba(186, 71, 71, 0.75);
+}
