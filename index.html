@@ -9,17 +9,29 @@
     <title>Document</title>
   </head>
   <body>
+    <header>
+      <nav class="ganadores">
+        <a id="btnSorteo">Sorteo</a>
+        <a id="btnGanadores">Ganadores</a>
+      </nav>
+    </header>
     <section class="sorteo-dos" id="container-sorteo-dos">
-      <div class="sorteo-dos-container">
-        <h2>Sorteo Digital</h2>
-        <ul id="lista-jugadores"></ul>
-        <div class="nombres">
-          <input id="sorteo-dos" type="text" placeholder="Nombre jugador" />
+      <div id="sorteo-container">
+        <div class="sorteo-dos-container">
+          <h2>Sorteo Digital</h2>
+          <ul id="lista-jugadores"></ul>
+          <div class="nombres">
+            <input id="sorteo-dos" type="text" placeholder="Nombre jugador" />
+          </div>
+          <div class="botones">
+            <input id="agregar-jugador" type="button" value="Agregar Jugador" />
+            <input id="ganador-btn-dos" type="button" value="Sortear Ganador" />
+          </div>
         </div>
-        <div class="botones">
-          <input id="agregar-jugador" type="button" value="Agregar Jugador" />
-          <input id="ganador-btn-dos" type="button" value="Sortear Ganador" />
-        </div>
+      </div>
+
+      <div id="containerGanadoresPrincipal">
+        <section class="winners" id="ganadores"></section>
       </div>
     </section>
 

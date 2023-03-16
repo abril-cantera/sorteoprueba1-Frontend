@@ -9,66 +9,25 @@ html {
 body {
   height: 100%;
   font-family: "Rubik Puddles", cursive;
+  background-color: #330033;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='352' height='352' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23404' stroke-width='3.3'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%23505'%3E%3Ccircle cx='769' cy='229' r='11'/%3E%3Ccircle cx='539' cy='269' r='11'/%3E%3Ccircle cx='603' cy='493' r='11'/%3E%3Ccircle cx='731' cy='737' r='11'/%3E%3Ccircle cx='520' cy='660' r='11'/%3E%3Ccircle cx='309' cy='538' r='11'/%3E%3Ccircle cx='295' cy='764' r='11'/%3E%3Ccircle cx='40' cy='599' r='11'/%3E%3Ccircle cx='102' cy='382' r='11'/%3E%3Ccircle cx='127' cy='80' r='11'/%3E%3Ccircle cx='370' cy='105' r='11'/%3E%3Ccircle cx='578' cy='42' r='11'/%3E%3Ccircle cx='237' cy='261' r='11'/%3E%3Ccircle cx='390' cy='382' r='11'/%3E%3C/g%3E%3C/svg%3E");
 }
-/**/
-/* .divPrincipal {
+.inactive {
+  display: none;
+}
+.active {
   display: flex;
 }
-.sorteo-uno {
-  height: 100vh;
-  width: 100%;
+.ganadores {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
 }
-.jugadores {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-.sorteo-uno-container {
-  background-color: pink;
-  width: auto;
-  max-width: 80%;
-  height: auto;
-  box-shadow: 0px 0px 10px 4px rgba(181, 94, 94, 0.75);
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.sorteo-uno-container h2 {
-  font-size: 3rem;
-  text-align: center;
-  margin: 10px;
-}
-.sorteo-uno-container li {
-  width: 210px;
-  height: 50px;
-  font-weight: 700;
-  list-style: none;
+.ganadores a {
+  margin: 0 15px;
+  color: white;
+  text-decoration: none;
   font-size: 2rem;
-  margin: 5px;
-  border-radius: 5px;
-  display: flex;
-  background: rgb(222, 139, 153);
-  justify-content: center;
-  align-items: center;
 }
-#ganador-btn {
-  height: 60px;
-  width: 200px;
-  font-size: 1.3rem;
-  margin: 10px;
-  border: none;
-  border-radius: 5px;
-  font-family: "Rubik Puddles", cursive;
-  font-weight: 700;
-}
-#ganador-btn:hover {
-  box-shadow: 0px 0px 11px 4px rgba(186, 71, 71, 0.75);
-} */
 /**/
 .sorteo-dos {
   height: 100vh;
@@ -76,6 +35,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 .sorteo-dos-container {
   width: 60vw;
@@ -119,4 +79,20 @@ body {
 }
 .sorteo-dos-container input:hover {
   box-shadow: 0px 0px 11px 4px rgba(186, 71, 71, 0.75);
+}
+.winners {
+  width: 60vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: pink;
+  box-shadow: 0px 0px 10px 4px rgb(181 94 94 / 75%);
+  border-radius: 5px;
+}
+.text {
+  font-size: 3rem;
+  text-align: center;
+  padding-top: 15px;
 }
