@@ -87,11 +87,21 @@ async function getData() {
   containerWinners.innerHTML = "";
 
   data.map(item => {
+    // if (data.includes(item) === data.nameWinner) {
+    //   const cont = 1
+    //   var p = document.createElement('p')
+    //   p.innerText = item.nameWinner
+    //   p.classList.add('text')
+    //   section.appendChild(p)
+    //   containerWinners.appendChild(section)
+    //   console.log(cont++)
+    // } else {
     var p = document.createElement('p')
     p.innerText = item.nameWinner
     p.classList.add('text')
     section.appendChild(p)
     containerWinners.appendChild(section)
+    // }
   });
 }
 
@@ -105,6 +115,6 @@ async function postData(name) {
       nameWinner: name
     }),
   });
-
-  console.log('Save');
+  const data = await response.json()
+  console.log('Save', data);
 }
