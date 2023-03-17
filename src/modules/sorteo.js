@@ -23,11 +23,12 @@ export function sorteo(input, agregar, ganador, jugadores) {
   const ganadorSorteo = () => {
     $input.focus();
     const random = Math.floor(Math.random() * jugadoresArray.length);
-    const jugadorGanador = jugadoresArray[random];
+    let jugadorGanador = jugadoresArray[random];
     jugadoresArray = [];
     const winner = jugadorGanador
 
     postData(winner)
+
 
     setTimeout(() => {
       $jugadores.innerHTML = [];
@@ -79,30 +80,48 @@ async function getData() {
   const sorteoContainer = document.getElementById('sorteo-container')
   const containerWinners = document.getElementById('ganadores')
   const containerGanadoresPrincipal = document.getElementById('containerGanadoresPrincipal')
-  //
+
   sorteoContainer.classList.add('inactive')
   containerGanadoresPrincipal.classList.remove('inactive')
-  //
+
   const section = document.createElement('section')
   containerWinners.innerHTML = "";
 
-  data.map(item => {
-    // if (data.includes(item) === data.nameWinner) {
-    //   const cont = 1
-    //   var p = document.createElement('p')
-    //   p.innerText = item.nameWinner
-    //   p.classList.add('text')
-    //   section.appendChild(p)
-    //   containerWinners.appendChild(section)
-    //   console.log(cont++)
-    // } else {
-    var p = document.createElement('p')
-    p.innerText = item.nameWinner
-    p.classList.add('text')
-    section.appendChild(p)
-    containerWinners.appendChild(section)
+
+
+  const contador = {};
+  function contarYeliminar(array) {
+    const resultado = [];
+    array.map(item => {
+      const valor = item.nameWinner;
+      if (!contador[valor]) {
+        contador[valor] = 1;
+        resultado.push(valor);
+      } else {
+        contador[valor]++;
+        console.log('CONTADOR', contador);
+      }
+    })
+    // for (const [valor, cantidad] of Object.entries(contador)) {
+    //   console.log(`El valor ${valor} se repitió ${cantidad} veces`);
     // }
-  });
+    for (const key in contador) {
+      const value = contador[key];
+      console.log(`${key}: ${value}`);
+    }
+    resultado.map((item) => {
+      var p = document.createElement('p')
+      var pNumber = document.createElement('p')
+      pNumber.innerText =
+        p.innerText = item
+      p.classList.add('text')
+      section.appendChild(pNumber)
+      section.appendChild(p)
+      containerWinners.appendChild(section)
+    })
+    return resultado
+  }
+  const resultado = contarYeliminar(data)
 }
 
 async function postData(name) {
