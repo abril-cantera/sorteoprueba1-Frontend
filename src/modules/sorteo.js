@@ -27,7 +27,7 @@ export function sorteo(input, agregar, ganador, jugadores) {
       notificacionAlerta('Nombre repetido')
     } else {
       jugadoresArray.push(inputValue);
-
+      $jugadores.classList.add('form-group', 'form-style')
       $jugadores.insertAdjacentHTML("beforeend", `<li>${inputValue}</li>`);
 
       $input.value = "";
@@ -45,8 +45,24 @@ export function sorteo(input, agregar, ganador, jugadores) {
 
     setTimeout(() => {
       $jugadores.innerHTML = [];
-    }, 2000);
-    notificacionAlerta(`El ganador es ${jugadorGanador}`)
+    }, 4000);
+
+
+    const contadorPrincipal = document.getElementById('contadorPrincipal')
+    const contador = document.getElementById('contador')
+    let n = 3
+    const timer = setInterval(() => {
+      if (!!winner && !!n) {
+        contadorPrincipal.classList.remove('inactive');
+        contador.innerHTML = `${n}`;
+        n--;
+      } else if (!!winner && n == 0) {
+        contadorPrincipal.classList.add('inactive');
+        clearInterval(timer);
+        notificacionAlerta(`El ganador es ${jugadorGanador}`)
+      }
+    }, 1000);
+
   };
 
 
