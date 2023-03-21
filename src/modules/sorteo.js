@@ -84,7 +84,6 @@ async function getData() {
   sorteoContainer.classList.add('inactive')
   containerGanadoresPrincipal.classList.remove('inactive')
 
-  const section = document.createElement('section')
   containerWinners.innerHTML = "";
 
 
@@ -99,24 +98,32 @@ async function getData() {
         resultado.push(valor);
       } else {
         contador[valor]++;
-        console.log('CONTADOR', contador);
+        resultado.sort(function (a, b) {
+          return contador[b] - contador[a];
+        })
       }
+
     })
-    // for (const [valor, cantidad] of Object.entries(contador)) {
-    //   console.log(`El valor ${valor} se repitió ${cantidad} veces`);
-    // }
-    for (const key in contador) {
-      const value = contador[key];
-      console.log(`${key}: ${value}`);
-    }
-    resultado.map((item) => {
-      var p = document.createElement('p')
+
+    resultado.map((item, i) => {
+      let cont = Object.values(contador)
+      cont.sort(function (a, b) {
+        return b - a
+      })
+
+      const section = document.createElement('section')
       var pNumber = document.createElement('p')
-      pNumber.innerText =
-        p.innerText = item
+      var p = document.createElement('p')
+
+      p.innerText = item
+      pNumber.innerText = cont[i]
+
+      section.classList.add('contadorWinners')
       p.classList.add('text')
-      section.appendChild(pNumber)
+      pNumber.classList.add('textNumber')
+
       section.appendChild(p)
+      section.appendChild(pNumber)
       containerWinners.appendChild(section)
     })
     return resultado
