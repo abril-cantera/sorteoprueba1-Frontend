@@ -6,12 +6,25 @@ export function sorteo(input, agregar, ganador, jugadores) {
 
   let jugadoresArray = [];
 
+  const notificacion = document.getElementById('notificacion')
+  const text = document.getElementById('text')
+  const btnNotificacion = document.getElementById('btnNotificacion')
+
+  function notificacionAlerta(alerta) {
+    notificacion.classList.add('notificacion')
+    notificacion.classList.remove('inactive')
+    btnNotificacion.addEventListener('click', closedNotification)
+    text.innerText = alerta
+  }
+  function closedNotification() {
+    notificacion.classList.add('inactive')
+  }
   const agregarJugadores = () => {
     const inputValue = $input.value;
     if (inputValue === "" || inputValue.length === 0) {
-      alert("No has ingresado participante");
+      notificacionAlerta("No has ingresado participante")
     } else if (jugadoresArray.includes(inputValue)) {
-      alert('Nombre repetido')
+      notificacionAlerta('Nombre repetido')
     } else {
       jugadoresArray.push(inputValue);
 
@@ -33,7 +46,7 @@ export function sorteo(input, agregar, ganador, jugadores) {
     setTimeout(() => {
       $jugadores.innerHTML = [];
     }, 2000);
-    alert(`El ganador es ${jugadorGanador}`);
+    notificacionAlerta(`El ganador es ${jugadorGanador}`)
   };
 
 
@@ -53,7 +66,7 @@ export function sorteo(input, agregar, ganador, jugadores) {
 
   $ganador.addEventListener("click", () => {
     if (jugadoresArray.length === 0) {
-      alert("No has ingresado participantes");
+      notificacionAlerta("No has ingresado participantes")
     } else {
       ganadorSorteo();
     }

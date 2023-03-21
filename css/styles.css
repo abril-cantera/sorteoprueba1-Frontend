@@ -18,6 +18,33 @@ body {
 .active {
   display: flex;
 }
+.notificacion {
+  position: absolute;
+  top: 40%;
+  width: 299px;
+  height: 150px;
+  background-color: white;
+  left: 30%;
+}
+.btnNotificacion {
+  height: 40px;
+  width: 150px;
+  font-size: 1.4rem;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  font-family: "Rubik Puddles", cursive;
+  font-weight: 700;
+  text-align: center;
+}
+.notificationSecondary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  justify-content: space-evenly;
+}
 .ganadores {
   display: flex;
   justify-content: flex-end;
