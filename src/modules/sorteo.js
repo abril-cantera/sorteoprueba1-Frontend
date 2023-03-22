@@ -53,7 +53,7 @@ export function sorteo(input, agregar, ganador, jugadores) {
     const contador = document.getElementById('contador')
     let n = 3
 
-    notificacion.classList.toggle('inactive')
+    notificacion.classList.add('inactive')
     const timer = setInterval(() => {
       if (!!winner && !!n) {
         contadorPrincipal.classList.remove('inactive');
