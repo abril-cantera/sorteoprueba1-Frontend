@@ -27,8 +27,8 @@ export function sorteo(input, agregar, ganador, jugadores) {
       notificacionAlerta('Nombre repetido')
     } else {
       jugadoresArray.push(inputValue);
-      $jugadores.classList.add('form-group', 'form-style')
-      $jugadores.insertAdjacentHTML("beforeend", `<li>${inputValue}</li>`);
+      $jugadores.classList.add('list-winners')
+      $jugadores.insertAdjacentHTML("beforeend", `<li class="liPlayers">${inputValue}</li>`);
 
       $input.value = "";
     }
@@ -45,6 +45,7 @@ export function sorteo(input, agregar, ganador, jugadores) {
 
     setTimeout(() => {
       $jugadores.innerHTML = [];
+      $jugadores.classList.add('inactive')
     }, 4000);
 
 
@@ -91,15 +92,15 @@ export function sorteo(input, agregar, ganador, jugadores) {
 
 const btnWinners = document.getElementById('btnGanadores')
 btnWinners.addEventListener('click', getData)
-const btnSorteo = document.getElementById('btnSorteo')
-btnSorteo.addEventListener('click', getSorteo)
+// const btnSorteo = document.getElementById('btnSorteo')
+// btnSorteo.addEventListener('click', getSorteo)
 
-function getSorteo() {
-  const sorteoContainer = document.getElementById('sorteo-container')
-  const containerWinners = document.getElementById('ganadores')
-  sorteoContainer.classList.remove('inactive')
-  containerGanadoresPrincipal.classList.add('inactive')
-}
+// function getSorteo() {
+//   const sorteoContainer = document.getElementById('sorteo-container')
+//   const containerWinners = document.getElementById('ganadores')
+//   sorteoContainer.classList.remove('inactive')
+//   containerGanadoresPrincipal.classList.add('inactive')
+// }
 
 const api = 'http://18.116.45.121:3000/api/v1/winners'
 async function getData() {
