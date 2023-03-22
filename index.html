@@ -5,98 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/styles.css" />
-    <title>Sorteo</title>
+    <title>Document</title>
   </head>
   <body>
-    <!-- Notificacion -->
-    <section id="notificacion" class="notificacion inactive">
-      <section class="notDisplay">
-        <section class="notificationSecondary">
-          <h2 id="text"></h2>
-          <button id="btnNotificacion" class="btnNotificacion">cerrar</button>
-        </section>
-      </section>
-    </section>
-
-    <!-- CONTADOR -->
-    <div class="notificacion inactive" id="contadorPrincipal">
-      <section class="notDisplay">
-        <section class="notificationSecondary">
-          <h2 class="contador" id="contador"></h2>
-        </section>
-      </section>
-    </div>
-
-    <div class="section">
-      <div class="container">
-        <div class="row full-height justify-content-center">
-          <div class="col-12 text-center align-self-center py-5">
-            <div class="section pb-5 pt-5 pt-sm-2 text-center">
-              <nav class="mb-0 pb-3">
-                <a id="btnSorteo">SORTEO</a>
-                <a id="btnGanadores">WINNERS</a>
-              </nav>
-              <input
-                class="checkbox"
-                type="checkbox"
-                id="reg-log"
-                name="reg-log"
-              />
-              <label for="reg-log"></label>
-
-              <div class="card-3d-wrap mx-auto">
-                <div class="card-3d-wrapper">
-                  <div class="card-front">
-                    <div class="center-wrap">
-                      <div
-                        class="section text-center"
-                        id="container-sorteo-dos"
-                      >
-                        <div id="sorteo-container">
-                          <h2 class="mb-4 pb-3">Sorteo Digital</h2>
-                          <div>
-                            <ul id="lista-jugadores"></ul>
-                          </div>
-                          <div class="form-group">
-                            <input
-                              class="form-style"
-                              id="sorteo-dos"
-                              type="text"
-                              placeholder="Nombre jugador"
-                            />
-                          </div>
-                          <div class="botones">
-                            <input
-                              id="agregar-jugador"
-                              type="button"
-                              value="Agregar Jugador"
-                            />
-                            <input
-                              id="ganador-btn-dos"
-                              type="button"
-                              value="Sortear Ganador"
-                            />
-                          </div>
-                        </div>
-
-                        <div id="containerGanadoresPrincipal">
-                          <section class="winners" id="ganadores"></section>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+    <header>
+      <nav class="ganadores">
+        <a id="btnSorteo">Sorteo</a>
+        <a id="btnGanadores">Ganadores</a>
+      </nav>
+    </header>
+    <section class="sorteo-dos" id="container-sorteo-dos">
+      <div id="sorteo-container">
+        <div class="sorteo-dos-container">
+          <h2>Sorteo Digital</h2>
+          <ul id="lista-jugadores"></ul>
+          <div class="nombres">
+            <input id="sorteo-dos" type="text" placeholder="Nombre jugador" />
+          </div>
+          <div class="botones">
+            <input id="agregar-jugador" type="button" value="Agregar Jugador" />
+            <input id="ganador-btn-dos" type="button" value="Sortear Ganador" />
           </div>
         </div>
       </div>
-    </div>
-    <!-- /*SCRIPT*/ -->
-    <script
-      type="text/javascript"
-      src="https://code.jquery.com/jquery-1.11.0.js"
-    ></script>
+
+      <div id="containerGanadoresPrincipal">
+        <section class="winners" id="ganadores"></section>
+      </div>
+    </section>
+
     <script type="module" src="./src/index.js"></script>
   </body>
 </html>
