@@ -52,6 +52,8 @@ export function sorteo(input, agregar, ganador, jugadores) {
     const contadorPrincipal = document.getElementById('contadorPrincipal')
     const contador = document.getElementById('contador')
     let n = 3
+
+    notificacion.classList.toggle('inactive')
     const timer = setInterval(() => {
       if (!!winner && !!n) {
         contadorPrincipal.classList.remove('inactive');
@@ -92,15 +94,6 @@ export function sorteo(input, agregar, ganador, jugadores) {
 
 const btnWinners = document.getElementById('btnGanadores')
 btnWinners.addEventListener('click', getData)
-// const btnSorteo = document.getElementById('btnSorteo')
-// btnSorteo.addEventListener('click', getSorteo)
-
-// function getSorteo() {
-//   const sorteoContainer = document.getElementById('sorteo-container')
-//   const containerWinners = document.getElementById('ganadores')
-//   sorteoContainer.classList.remove('inactive')
-//   containerGanadoresPrincipal.classList.add('inactive')
-// }
 
 const api = 'http://18.116.45.121:3000/api/v1/winners'
 async function getData() {

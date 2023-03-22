@@ -267,3 +267,6 @@ h6 span {
   border-radius: 5px;
   box-shadow: -1px -1px 21px 4px rgba(0, 0, 0, 0.7);
 }
+.text {
+  text-align: center;
+}
